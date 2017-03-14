@@ -127,7 +127,7 @@ export default function({ types: t }) {
                 separator = separator || '/';
                 const dirname = getFolderName(state.file.opts.filename);
 
-                if (babelPath.node.name === '__omodule_foldername') {
+                if (babelPath.node.name === '__omodule_name') {
                     babelPath.replaceWith(
                         t.stringLiteral(
                             getOmoduleName(dirname, state.file.opts.sourceRoot, oFilename)
@@ -144,6 +144,13 @@ export default function({ types: t }) {
                                 oFilename,
                                 separator
                             )
+                        )
+                    );
+                }
+                if (babelPath.node.name === '__omodule_filename') {
+                    babelPath.replaceWith(
+                        t.stringLiteral(
+                            path.basename(state.file.opts.filename)
                         )
                     );
                 }

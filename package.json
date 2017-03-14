@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-transform-omodule-variable",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "omodule babel plugin",
   "main": "lib/index.js",
   "scripts": {
