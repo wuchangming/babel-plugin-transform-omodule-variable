@@ -148,14 +148,9 @@ export default function({ types: t }) {
                     );
                 }
                 if (babelPath.node.name === '__omodule_filename') {
-                    babelPath.replaceWith(
-                        t.stringLiteral(
-                            path.basename(state.file.opts.filename)
-                        )
-                    );
+                    babelPath.replaceWith(t.stringLiteral(path.basename(state.file.opts.filename)));
                 }
                 if (babelPath.node.name === '__omodule_childnames') {
-
                     const names = getOmoduleChildNames(
                         state.file.opts.filename,
                         state.file.opts.sourceRoot,
